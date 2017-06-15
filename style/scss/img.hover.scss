@@ -4,12 +4,12 @@
 
 $ns: $nameSpaceImg;
 
-@mixin imgcomm() {
+.#{$ns}comm {
     vertical-align: middle;
 }
 
 .#{$ns}lger {
-    @include imgcomm();
+    @extend .#{$ns}comm;
     &:hover {
         @include prefixed(transform, scale(1.15));
         @include prefixed(transition, .3s);
@@ -17,7 +17,7 @@ $ns: $nameSpaceImg;
 }
 
 .#{$ns}rot-lger {
-    @include imgcomm();
+    @extend .#{$ns}comm;
     &:hover {
         @include prefixed(transform, rotate(360deg) scale(1.1));
         @include prefixed(transition, .3s linear);
@@ -25,9 +25,8 @@ $ns: $nameSpaceImg;
     }
 }
 
-
 .#{$ns}tilt-lger {
-	@include imgcomm();
+    @extend .#{$ns}comm;
     &:hover {
         @include prefixed(transform, rotate(3deg) scale(1.1));
         @include prefixed(transition, .3s linear);
