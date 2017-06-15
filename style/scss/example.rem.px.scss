@@ -1,0 +1,45 @@
+@charset "UTF-8";
+@import "options";
+@import "functions";
+
+$pxOnly: false;
+
+.main-rem {
+    &.rem {
+        width: rem(600);
+        height: rem(600);
+    }
+    &.rempx-num {
+    	width: rempx(600);
+        height: rempx(600);
+    }
+    &.rempx-px {
+    	width: rempx(600px);
+        height: rempx(600px);
+    }
+    &.rempx-rem {
+    	width: rempx(600rem);
+        height: rempx(600rem);
+    }
+}
+
+$pxOnly: true;
+
+.main-px {
+    &.px {
+        width: px(600);
+        height: px(600);
+    }
+    &.rempx-num {
+    	width: rempx(600);
+        height: rempx(600);
+    }
+    &.rempx-px {
+    	width: rempx(600px);
+        height: rempx(600px);
+    }
+    &.rempx-rem {
+    	width: rempx(600rem);
+        height: rempx(600rem);
+    }
+}
