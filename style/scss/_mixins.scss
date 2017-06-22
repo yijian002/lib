@@ -41,3 +41,16 @@
         @content;
     }
 }
+
+@mixin ellipsis($line) {
+    $line: 1 !default;
+    
+    overflow: hidden;
+    word-wrap: break-word; 
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    display: box;
+    @include prefixed('line-clamp', $line);
+    @include prefixed('box-orient', 'vertical');
+}

@@ -2,6 +2,10 @@
 
 $ns: $nameSpaceComm;
 
+.#{$ns}hide {
+	display: none;
+}
+
 // float
 .#{$ns}fl {
     float: left;
