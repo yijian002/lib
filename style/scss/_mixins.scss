@@ -42,15 +42,31 @@
     }
 }
 
-@mixin ellipsis($line) {
-    $line: 1 !default;
-    
+@mixin ellipsis($line: 1) {
     overflow: hidden;
-    word-wrap: break-word; 
+    word-wrap: break-word;
     word-break: break-all;
     text-overflow: ellipsis;
     display: -webkit-box;
     display: box;
     @include prefixed('line-clamp', $line);
     @include prefixed('box-orient', 'vertical');
+}
+
+@mixin scrollbar($width: 5px, $bgcolor: rgba(0,0,0,0), $from: #545454, $to: #545454, $stop: #545454) {
+    &::-webkit-scrollbar-track {
+        background-color: $bgcolor;
+        border-radius: $width;
+    }
+    &::-webkit-scrollbar {
+        width: $width;
+        background-color: $bgcolor;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: $width;
+        background-color: $bgcolor;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-image: -webkit-gradient(linear, 40% 0%, 75% 84%, from($from), to($to), color-stop(.6, $stop));
+    }
 }
